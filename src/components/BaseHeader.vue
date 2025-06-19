@@ -1,4 +1,3 @@
-<!-- src/components/HomePage.vue -->
 <template>
     <header>
         <nav>

@@ -1,4 +1,3 @@
-<!-- src/components/HomePage.vue -->
 <template>
   <div class="homePage">
     <p>Bienvenue sur la page d'accueil</p>

@@ -1,4 +1,3 @@
-<!-- src/components/HomePage.vue -->
 <template>
   <footer>
     <p>Patrick Wu, Julien Weng, Armando Lopes de Sousa - 2025 - Tous droits réservés.</p>
