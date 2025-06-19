@@ -4,6 +4,8 @@
     <p>Voici les BaseButton :</p>
     <BaseButton nom="BaseButton"/>
     <BaseButton nom="BaseButton" disabled="true"/>
+    <BaseButton nom="BaseButton with color props" variant="warn"/>
+    <BaseButton nom="BaseButton with color props" variant="danger"/>
     </div>
 </template>
 

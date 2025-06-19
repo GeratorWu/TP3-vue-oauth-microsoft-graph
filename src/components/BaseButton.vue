@@ -43,9 +43,21 @@ export default {
 }
 
 
-.base-button:hover{
-    background-color: white !important;
+.base-button--primary:hover{
+    background-color: white;
     color: #04AA6D;
+    font-weight: bold;
+}
+
+.base-button--warn:hover{
+    background-color: white;
+    color: orange;
+    font-weight: bold;
+}
+
+.base-button--danger:hover{
+    background-color: white;
+    color: red;
     font-weight: bold;
 }
 
@@ -60,4 +72,15 @@ export default {
     border: 2px solid #04AA6D;
 }
 
+.base-button--warn {
+  background-color: orange;
+  color: white;
+  border: 2px solid orange;
+}
+
+.base-button--danger {
+  background-color: red;
+  color: white;
+  border: 2px solid red;
+}
 </style>
