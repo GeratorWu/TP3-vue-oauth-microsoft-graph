@@ -50,17 +50,14 @@ export default {
 }
 
 .base-button:disabled {
-    filter: brightness(120%);
+    filter: brightness(130%);
+    cursor: not-allowed;
 }
 
 .base-button--primary {
-    background-color: #04AA6D !important; 
+    background-color: #04AA6D; 
     color: white;
     border: 2px solid #04AA6D;
 }
 
-.base-button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
-}
 </style>
