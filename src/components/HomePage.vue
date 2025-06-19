@@ -1,6 +1,8 @@
 <!-- src/components/HomePage.vue -->
 <template>
-  <div>Bienvenue sur la page d'accueil</div>
+  <div class="homePage">
+    <p>Bienvenue sur la page d'accueil</p>
+    </div>
 </template>
 
 <script>
@@ -11,5 +13,6 @@ export default {
 
 
 <style>
-
+.homePage{
+}
 </style>
