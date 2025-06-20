@@ -6,6 +6,7 @@
     <BaseButton nom="BaseButton" disabled="true"/>
     <BaseButton nom="BaseButton with color props" variant="warn"/>
     <BaseButton nom="BaseButton with color props" variant="danger"/>
+    <AsyncButton nom="tata" />
     </div>
 </template>
 
@@ -13,11 +14,12 @@
 
 
 import BaseButton from './BaseButton.vue'
-
+import AsyncButton from './AsyncButton.vue'
 export default {
   name: 'HomePage',
   components: {
-    BaseButton
+    BaseButton,
+    AsyncButton
   }
 }
 </script>
