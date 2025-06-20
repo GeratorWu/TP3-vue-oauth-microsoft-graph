@@ -7,6 +7,7 @@
     <BaseButton nom="BaseButton with color props" variant="warn" />
     <BaseButton nom="BaseButton with color props" variant="danger" />
     <AsyncButton :asyncButtonCounter=counterAsyncBtn @increaseAsyncBtnCounter="counterAsyncBtn++"/>
+    <SigninButton/>
   </div>
 </template>
 
@@ -15,11 +16,13 @@
 
 import BaseButton from './BaseButton.vue'
 import AsyncButton from './AsyncButton.vue'
+import SigninButton from './SigninButton.vue'
 export default {
   name: 'HomePage',
   components: {
     BaseButton,
-    AsyncButton
+    AsyncButton,
+    SigninButton
   },
   data() {
     return { counterAsyncBtn: 2 }
