@@ -2,12 +2,12 @@
   <div class="homePage">
     <p>Bienvenue sur la page d'accueil</p>
     <p>Voici les BaseButton :</p>
-    <BaseButton nom="BaseButton"/>
-    <BaseButton nom="BaseButton" disabled="true"/>
-    <BaseButton nom="BaseButton with color props" variant="warn"/>
-    <BaseButton nom="BaseButton with color props" variant="danger"/>
-    <AsyncButton nom="tata" />
-    </div>
+    <BaseButton nom="BaseButton" />
+    <BaseButton nom="BaseButton" disabled="true" />
+    <BaseButton nom="BaseButton with color props" variant="warn" />
+    <BaseButton nom="BaseButton with color props" variant="danger" />
+    <AsyncButton :asyncButtonCounter=counterAsyncBtn @increaseAsyncBtnCounter="counterAsyncBtn++"/>
+  </div>
 </template>
 
 <script>
@@ -20,12 +20,15 @@ export default {
   components: {
     BaseButton,
     AsyncButton
+  },
+  data() {
+    return { counterAsyncBtn: 2 }
   }
+
 }
 </script>
 
 
 <style>
-.homePage{
-}
+.homePage {}
 </style>
