@@ -18,8 +18,22 @@ const msalInstance = new msal.PublicClientApplication({
 })
 
 export async function signInAndGetUser () {
-  await msalInstance.initialize()
-  const authResult = await msalInstance.loginPopup(requestedScopes)
-  msalInstance.setActiveAccount(authResult.account)
-  return authResult.account
+  const user = { nom: "dupont", prenom: "francois" }
+  try {
+    await msalInstance.initialize()
+    const authResult = await msalInstance.loginPopup(requestedScopes)
+    msalInstance.setActiveAccount(authResult.account)
+
+    return user
+
+  } catch (error) {
+    if (error.errorCode === "user_cancelled" || error.errorCode === "popup_closed") {
+      console.warn("Connexion annulée par l'utilisateur.")
+      return user
+    } else {
+      console.error("Erreur MSAL :", error)
+     
+       return user
+      }
+  }
 }

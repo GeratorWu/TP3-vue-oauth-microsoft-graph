@@ -1,14 +1,40 @@
 <template>
-    <header>
-        <nav>
-            <a href="#">Accueil</a>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <a href="#">Accueil</a>
+
+      
+      <SigninButton @login-success="displayUser" />
+      <p> {{ nom }} {{ prenom }}</p>
+    </nav>
+
+  </header>
 </template>
 
 <script>
+import SigninButton from './SigninButton.vue'
 export default {
-    name: 'BaseHeader'
+  name: 'BaseHeader',
+
+  components: {
+    SigninButton
+  },
+  data() {
+    return { nom: "", prenom: "" }
+  },
+  methods: {
+
+    async displayUser(user) {
+
+      console.log(user);
+      
+      console.log(user.nom + " " + user.prenom);
+      this.nom = user.nom
+      this.prenom = user.prenom
+    }
+  }
+
+
 }
 </script>
 
@@ -36,5 +62,4 @@ nav a {
 nav a:hover {
   color: #000000;
 }
-
 </style>
