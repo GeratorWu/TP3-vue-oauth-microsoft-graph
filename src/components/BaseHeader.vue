@@ -2,6 +2,7 @@
   <header>
     <nav>
       <router-link to="/">Accueil</router-link>
+      <router-link to="/conversations">Conversations</router-link>
 
       <SigninButton @login-success="displayUser" />
       <p>{{ nom }} {{ prenom }}</p>
