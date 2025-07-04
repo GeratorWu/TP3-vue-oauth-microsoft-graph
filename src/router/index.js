@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '@/components/HomePage.vue'
 import ConvPage from '@/components/ConvPage.vue'
+import ConversationShowPage from '@/components/ConversationShowPage.vue'
 import store from '@/store'
 
 const routes = [
@@ -13,6 +14,18 @@ const routes = [
     path: '/conversations',
     name: 'Conversations',
     component: ConvPage,
+    beforeEnter: (to, from, next) => {
+      if (store.getters.isAuthenticated) {
+        next()
+      } else {
+        next({ name: 'Home' })
+      }
+    }
+  },
+  {
+    path: '/conversations/:id',
+    name: 'ConversationShow',
+    component: ConversationShowPage,
     beforeEnter: (to, from, next) => {
       if (store.getters.isAuthenticated) {
         next()
