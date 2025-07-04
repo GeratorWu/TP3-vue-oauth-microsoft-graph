@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '@/components/HomePage.vue'
-import ConvPage from '@/components/ConvPage.vue' // Crée ce composant si tu veux une page About
+import ConvPage from '@/components/ConvPage.vue'
+import store from '@/store'
 
 const routes = [
   {
@@ -11,7 +12,14 @@ const routes = [
   {
     path: '/conversations',
     name: 'Conversations',
-    component: ConvPage
+    component: ConvPage,
+    beforeEnter: (to, from, next) => {
+      if (store.getters.isAuthenticated) {
+        next()
+      } else {
+        next({ name: 'Home' })
+      }
+    }
   }
 ]
 
