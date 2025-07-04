@@ -2,7 +2,7 @@
   <header>
     <nav>
       <router-link to="/">Accueil</router-link>
-      <router-link to="/conversations">Conversations</router-link>
+      <router-link to="/conversations" v-if="isLoggedIn">Conversations</router-link>
 
       <SigninButton @login-success="displayUser" />
       <p>{{ nom }} {{ prenom }}</p>
@@ -21,13 +21,15 @@ export default {
   data() {
     return {
       nom: '',
-      prenom: ''
+      prenom: '',
+      isLoggedIn: false
     }
   },
   methods: {
     async displayUser(user) {
       this.nom = user.nom
       this.prenom = user.prenom
+      this.isLoggedIn = true
     }
   }
 }
